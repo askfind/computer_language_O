@@ -1,0 +1,6 @@
+<*MAIN+*>
+MODULE OXDS;
+IMPORT O;
+BEGIN
+   O.Compiler;
+END OXDS.

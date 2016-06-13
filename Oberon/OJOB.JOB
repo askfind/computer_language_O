@@ -1,0 +1,22 @@
+MODULE OJob;
+
+IMPORT javalang, O, Location;
+
+PROCEDURE main*(VAR args : ARRAY OF javalang.PString);
+VAR
+   i : INTEGER;
+BEGIN
+   IF LEN(args) = 0 THEN
+      Location.Path := "";
+   ELSE
+      i := 0;
+      WHILE i<args[0].length() DO
+         Location.Path[i] := args[0].charAt(i);
+         INC(i);
+      END;
+      Location.Path[i] := 0X;
+   END;
+   O.Compiler; 
+END main;
+
+END OJob.

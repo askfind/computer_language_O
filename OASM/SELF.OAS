@@ -1,0 +1,15 @@
+;Метка Код     Стек
+Begin: Begin ; Begin
+Loop:  DUP   ; Begin, Begin
+       LOAD  ; Begin, M[Begin]
+       0
+       OUT
+       OUTLN ; Begin
+       1
+       ADD   ; Begin+1
+       DUP   ; Begin+1, Begin+1
+       End   ; Begin+1, Begin+1, End
+       Loop
+       IFLE
+       DROP
+End:   STOP

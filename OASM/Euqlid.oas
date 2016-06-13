@@ -1,0 +1,25 @@
+;НОД по алгоритму Эвклида
+
+      IN	; X		
+      IN	; X, Y
+
+Loop: OVER	; X, Y, X
+      OVER	; X, Y, X, Y
+      Quit
+      IFEQ	; X, Y		На выход (Quit), если X=Y
+      OVER	; X, Y, X
+      OVER	; X, Y, X, Y
+      NoSwap
+      IFLT	; X, Y		В обход SWAP, если X>Y
+      SWAP	; Y, X		На вершине большее
+NoSwap:
+      OVER	; Min(X, Y), Max(X, Y), Min(X, Y)
+      SUB		; Новое X, Новое Y 
+      Loop
+      GOTO	; X, Y		На начало цикла
+
+Quit: DROP	; X			Одно значение было лишним
+      0		; X, 0
+      OUT
+      OUTLN
+      STOP

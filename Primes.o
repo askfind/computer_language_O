@@ -1,0 +1,28 @@
+MODULE Primes;
+(* Простые числа от 2 до n *)
+
+IMPORT In, Out;
+
+VAR
+   n, c, i, d : INTEGER;
+
+BEGIN
+   In.Open;
+   In.Int(n);
+   c := 0; (* Счетчик простых *)
+   i := 2;
+   WHILE i <= n DO
+      (* Делим на 2, ... пока не разделится *)
+         d := 2;
+         WHILE i MOD d # 0 DO 
+            INC(d) 
+         END;
+      IF d = i THEN (* i - простое *)
+         INC(c);
+         Out.Int(d, 8) 
+      END;
+      INC(i);
+   END;
+   Out.Ln;
+   Out.Int(c, 0);
+END Primes.
