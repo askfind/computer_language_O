@@ -1,0 +1,19 @@
+(* Наибольший общий делитель *)
+MODULE Euqlid;
+IMPORT In, Out;
+VAR
+   X, Y : INTEGER;
+BEGIN
+   In.Open;
+   In.Int(X);
+   In.Int(Y);
+   WHILE X # Y DO
+      IF X > Y THEN
+         X := X - Y
+      ELSE
+         Y := Y - X
+      END;
+   END;
+   Out.Int(X, 0);
+   Out.Ln;
+END Euqlid.
